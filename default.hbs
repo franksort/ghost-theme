@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+  <head>
+    {{! Document Settings }}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {{! Page Meta }}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}">
+
+    {{! Mobile }} 
+    <meta name="HandheldFriendly" content="True" />
+    <!--
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    -->
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset "css/normalize.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/github-markdown.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+
+  </head>
+  <body class="{{body_class}}">
+
+    <!--
+    <div id="outer-wrap">
+    -->
+      <div id="inner-wrap">
+
+        <header id="top">
+          <h1 id="logo">{{@blog.title}}</h1>
+          <a id="nav-open-btn" href="#">Menu</a>
+        </header>
+
+        <nav id="nav" role="navigation">
+          <h2>Navigation</h2>
+          <p>
+            <strong>Hello!</strong><br />
+            I'm Frank, a software developer in Portland, Oregon.  Thanks for visiting.
+          </p>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Me</a></li>
+          </ul>
+          <!--
+          <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+          -->
+        </nav>
+
+        <div class="markdown-body" id="main">
+          {{! index.hbs, post.hbs, etc. will be inserted here }}
+          {{{body}}}
+        </div>
+
+
+        <footer>
+          <section class="copyright">
+            <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+          </section>
+        </footer>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="{{asset "js/hammer.min.js"}}"></script>
+        <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+
+        <!-- Syntax Hightlighting from highlight.js -->
+        <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/github.min.css">
+        <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+
+        {{! Ghost outputs important scripts and data with this tag }}
+        {{ghost_foot}}
+
+      </div>
+    <!--
+    </div>
+    -->
+
+        <a id="back-to-top" href="#">Back to Top</a>
+  </body>
+</html>
