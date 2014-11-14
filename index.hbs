@@ -1,6 +1,10 @@
 {{!< default}}
 {{! The tag above will insert everything in this file into the {body} of the default.hbs template }}
 
+<script type="text/javascript">
+  mixpanel.track("Index Page");
+</script>
+
 <div id="post-list">
 
   {{#foreach posts}}
